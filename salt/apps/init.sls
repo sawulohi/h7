@@ -1,1 +1,2 @@
-#TODO: make init.sls for pkg.installed
+vlc:
+  pkg.installed

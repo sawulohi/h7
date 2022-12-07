@@ -14,5 +14,6 @@ Programs that are going to be included are:
  * firefox - a web browser
  * vlc - a media player
  * gimp - image editing
+ * git - a version control system
 
 Homework for the course Configuration Management Systems - Palvelinten Hallinta ict4tn022-3018 - Autumn 2022
