@@ -7,7 +7,9 @@ This project will be using [Debian/Bullseye64](https://www.debian.org/download).
 The purpose of this module is to give the user a head start on a new host machine.
 This is achieved through installing a variety of different useful programs using SaltStack.
 Programs that are going to be included are:
+ * python3 - support for the programming language python
  * micro - a text editor
+ * libreoffice - like office365, but open source
  * discord - a communications program with both written and voice communications
  * firefox - a web browser
  * vlc - a media player
