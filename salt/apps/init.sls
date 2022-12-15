@@ -1,2 +1,6 @@
-vlc:
-  pkg.installed
+apps:
+  pkg.installed:
+    - gimp
+    - git
+    - micro
+    - vlc
