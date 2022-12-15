@@ -82,7 +82,7 @@ lockPref('layout.css.prefers-color-scheme.content-override', 0);
 ```
 Saved and exited,
 ```
-$ sudo cp /etc/firefox-esr/firefox-esr.js /srv/salt/firefox-esr.js
+$ sudo cp /etc/firefox-esr/firefox-esr.js /srv/salt/firefox_darktheme/firefox-esr.js
 ```
 I also checked Firefox:
 
@@ -101,3 +101,19 @@ $ micro init.sls
 ```
 
 ![minion and master side by side](6.png)
+
+Dark mode (and the new home page) was succesfully configured to the minion!
+
+### Putting it all together
+
+Now all there was left to do was make the top.sls that connected the two init.sls files.
+
+```
+$ micro ~/h7/salt/top.sls
+
+base:
+  '*':
+    - apps
+    - firefox_darktheme
+
+```

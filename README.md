@@ -9,7 +9,6 @@ The purpose of this module is to give the user a head start on a new host machin
 This is achieved through installing a variety of different useful programs using SaltStack.
 Programs that are going to be included are:
  * micro - a text editor
- * discord - a communications program with both written and voice communications
  * vlc - a media player
  * gimp - image editing
  * git - a version control system

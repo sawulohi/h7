@@ -1,1 +1,4 @@
-#TODO: make top.sls
+base:
+  '*':
+    - apps
+    - firefox_darktheme
