@@ -1,4 +1,9 @@
-# Have SaltStack installed on your desired host machines!
+# Testing report for the project
+
+This project will be using [Debian/Bullseye64](https://www.debian.org/download) and [Ubuntu22.04.1 LTS](https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso).
+The host machines used for testing are ran on VirtualBox (Version 6.1.26 r145957 (Qt5.6.2)) using the aformentioned Linux distros.
+
+### Have SaltStack installed on your desired host machines!
 
 You can find directions for this here: [Tero Karvinen Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux](https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/)
 I'm using both Ubuntu 22.04.1 LTS and Debian 11 Bullseye. See README.md for download links!
@@ -106,14 +111,25 @@ Dark mode (and the new home page) was succesfully configured to the minion!
 
 ### Putting it all together
 
-Now all there was left to do was make the top.sls that connected the two init.sls files.
+Now all there was left to do was to merge the two init.sls files (I also moved them under the same directory for simplicitys sake)
 
 ```
-$ micro ~/h7/salt/top.sls
+$ micro ~/h7/salt/firefox_darktheme/init.sls
 
-base:
-  '*':
-    - apps
-    - firefox_darktheme
-
+apps:
+      pkg.installed:
+        - pkgs:
+          - gimp
+          - git
+          - micro
+          - vlc
+          
+/etc/firefox-esr/firefox-esr.js:
+  file.managed:
+    - source: salt://firefox_darktheme/firefox-esr.js
 ```
+
+Run with ie. `sudo salt-call --local state.apply firefox_darktheme`
+
+All done!
+
